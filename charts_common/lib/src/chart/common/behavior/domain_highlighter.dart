@@ -13,6 +13,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import 'package:charts_common/src/common/color.dart';
+
 import '../base_chart.dart' show BaseChart, LifecycleListener;
 import '../processed_series.dart' show MutableSeries;
 import '../selection_model/selection_model.dart'
@@ -52,7 +54,8 @@ class DomainHighlighter<D> implements ChartBehavior<D> {
         series.colorFn = (int index) {
           final origColor = origColorFn(index);
           if (selectionModel.isDatumSelected(series, index)) {
-            return origColor.darker;
+            // return origColor.dark;
+            return Color.black;
           } else {
             return origColor;
           }
